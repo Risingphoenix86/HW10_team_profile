@@ -1,4 +1,4 @@
-const generateHTML = require('.src/generateHTML.js');
+const generateHTML = require('./src/generateHTML.js');
 
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
@@ -68,7 +68,7 @@ const addManager = () => {
         }
     ])
     .then(managerInput => {
-        const {name, id, email, officeNumber} = ManagerInput;
+        const {name, id, email, officeNumber} = managerInput;
         const manager = new Manager (name, id, email, officeNumber);
 
         teamGroup.push(manager);
@@ -86,7 +86,7 @@ const addEmployee = () => {
     return inquirer.prompt ([
         {
             type: 'list',
-            name: 'position',
+            name: 'role',
             message: "Please choose your employee's position",
             choices: ['Engineer', 'Intern']
         },
